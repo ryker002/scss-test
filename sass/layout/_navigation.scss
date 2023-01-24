@@ -1,0 +1,30 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+nav {
+  .container {
+    @include container();
+    @include flex-row(space-between);
+    & > a {
+      max-width: 100px;
+      line-height: 1.3em;
+    }
+  }
+  width: 100%;
+  @include padding-y(0.6em);
+  @include border-bottom(1px, $gray-100);
+
+  a {
+    @include link($fontweight-bold, $text--bold);
+  }
+
+  ul {
+    display: none;
+    @media (min-width: 767px) {
+      @include flex-row("space-between");
+    }
+    @include gap(1em);
+    list-style-type: none;
+    justify-content: space-between;
+  }
+}

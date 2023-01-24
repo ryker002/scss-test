@@ -1,0 +1,43 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+.hero {
+  @include container(100%, 0px);
+  @supports ((-o-object-fit: cover) or (object-fit: cover)) {
+    max-height: 300px;
+  }
+  overflow: hidden;
+  img {
+    @include image();
+  }
+}
+
+#about {
+  @include container();
+  @include margin($spacing-2xl auto);
+}
+
+#examples {
+  @include container();
+  @include margin-y($spacing-6xl);
+  .imageGallery {
+    @include grid(1);
+    @media (min-width: 767px) {
+      @include grid(2);
+    }
+    @media (min-width: 991px) {
+      @include grid(3);
+    }
+    @media (min-width: 1024px) {
+      @include grid(4);
+    }
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+#locations {
+  @include container();
+  @include flex();
+  @include gap($spacing-lg);
+}

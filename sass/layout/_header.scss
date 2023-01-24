@@ -1,0 +1,22 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+header {
+  @include container();
+  @include padding-y($spacing-xl);
+  @media (min-width: 991px) {
+    @include padding-y($spacing-3xl);
+  }
+
+  h1 {
+    @include reset-spacing();
+  }
+  h2 {
+    @include italic($gray-100, $fontsize-lg);
+    @include margin($spacing-xs);
+    @media (min-width: 991px) {
+      @include italic($gray-100, $fontsize-lg);
+      @include margin($spacing-xs $spacing-xs $spacing-xs $spacing-5xl);
+    }
+  }
+}

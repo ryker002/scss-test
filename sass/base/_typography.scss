@@ -1,0 +1,29 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+html,
+body {
+  font-family: $body;
+  color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h6,
+h6 {
+  @include heading();
+}
+
+h1 {
+  @include heading($fontweight-bold, $spacing-lg, $fontsize-2xl);
+}
+
+a {
+  @include link();
+}
+
+p {
+  @include text();
+}

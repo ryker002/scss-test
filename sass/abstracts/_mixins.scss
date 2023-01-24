@@ -1,0 +1,154 @@
+@import "../abstracts/variables";
+
+// Container
+@mixin container($maxWidth: 1280px, $padding: 20px) {
+  @include padding-x($padding);
+  @include margin-x(auto);
+  @include margin-y(0);
+  max-width: $maxWidth;
+}
+@mixin container-default($padding: 20px) {
+  @include padding-x($padding);
+  max-width: $container-default;
+  margin: 0 auto;
+}
+
+@mixin container-fullwidth($padding: 0px) {
+  max-width: $container-fullwidth;
+  width: $container-fullwidth;
+  @include padding-x($padding);
+  margin: 0 auto;
+}
+
+// Flexbox
+@mixin flex($dir: row, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin flex-row($justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin flex-column($justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Grid
+@mixin grid($columns: 1, $rows: 1, $gap: 2em, $align: start, $justify: start) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+  @include gap($gap);
+  align-content: $align;
+  justify-items: $justify;
+}
+
+// Spacing
+@mixin reset-spacing() {
+  @include margin(0);
+  @include padding(0);
+}
+
+@mixin padding($padding: 1em) {
+  padding: $padding;
+}
+@mixin padding-y($padding: 1em) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+@mixin padding-x($padding: 1em) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin margin($margin: 1em) {
+  margin: $margin;
+}
+@mixin margin-y($margin: 1em) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+@mixin margin-x($margin: 1em) {
+  margin-left: $margin;
+  margin-right: $margin;
+}
+
+@mixin gap($gap: 1em) {
+  @supports (gap: $gap) {
+    gap: $gap;
+  }
+  @supports not (gap: $gap) {
+    @include margin-x($gap);
+  }
+}
+
+// Decorational
+@mixin border-bottom($size: 1px, $color: $gray-100) {
+  border-bottom: $size solid $color;
+}
+@mixin aspect-ratio($ratio) {
+  @supports (aspect-ratio: $ratio) {
+    aspect-ratio: ratio;
+  }
+}
+@mixin shadow($color: $box-shadow-color, $size: $box-shadow-size) {
+  box-shadow: $color $size;
+}
+
+// Animation
+@mixin transition($length, $ease) {
+  transition: $length $ease;
+}
+
+// Typography
+@mixin heading(
+  $weight: $fontweight-regular,
+  $line-height: $spacing-xs,
+  $size: $fontsize-xl,
+  $color: $header
+) {
+  color: $color;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+}
+@mixin text(
+  $weight: $fontweight-regular,
+  $size: $fontsize-md,
+  $color: $text,
+  $lineheight: $line-height
+) {
+  font-weight: $weight;
+  font-size: $size;
+  color: $color;
+  line-height: $lineheight;
+}
+@mixin italic($color: $text, $size: $fontsize-lg, $weight: $fontweight-light) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  font-style: italic;
+  line-height: $spacing-md;
+}
+@mixin link($weight: $fontweight-regular, $color: $cta) {
+  color: $color;
+  font-weight: $weight;
+  text-decoration: none;
+}
+
+// Image Compatability
+
+@mixin image($width: 100%, $objectFit: cover) {
+  width: $width;
+  @supports ((-o-object-fit: $objectFit) or (object-fit: $objectFit)) {
+    -o-object-fit: $objectFit;
+    object-fit: $objectFit;
+  }
+}

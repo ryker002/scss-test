@@ -1,0 +1,6 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+main {
+  @include margin(0 0 $spacing-4xl 0);
+}

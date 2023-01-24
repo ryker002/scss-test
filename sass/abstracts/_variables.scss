@@ -1,0 +1,49 @@
+// Colors
+$header: var(--header-color);
+$cta: var(--cta-color);
+$buttons: var(--buttons-color);
+$text: var(--text-color);
+$text--bold: var(--text--bold-color);
+$gray-100: var(--text--gray-100--color);
+$gray-200: var(--text--gray-200--color);
+
+// Fonts
+$heading: var(--font-heading);
+$body: var(--font-body);
+
+$fontweight-bold: var(--font-weight-bold);
+$fontweight-regular: var(--font-weight-regular);
+$fontweight-light: var(--font-weight-light);
+
+$fontsize-sm: var(--font-size-sm);
+$fontsize-md: var(--font-size-md);
+$fontsize-lg: var(--font-size-lg);
+$fontsize-xl: var(--font-size-xl);
+$fontsize-2xl: var(--font-size-2xl);
+$fontsize-3xl: var(--font-size-3xl);
+$fontsize-4xl: var(--font-size-4xl);
+
+$line-height: var(--default-line-height);
+// Containers
+$container-default: var(--container-default);
+$container-fullwidth: var(--container-fullwidth);
+
+// Decoration
+$box-shadow-color: var(--box-shadow-color);
+$box-shadow-size: var(--box-shadow-size);
+
+// Spacing
+
+$spacing-xs: var(--spacing-xs);
+$spacing-sm: var(--spacing-sm);
+$spacing-md: var(--spacing-md);
+$spacing-lg: var(--spacing-lg);
+$spacing-xl: var(--spacing-xl);
+$spacing-2xl: var(--spacing-2xl);
+$spacing-3xl: var(--spacing-3xl);
+$spacing-4xl: var(--spacing-4xl);
+$spacing-5xl: var(--spacing-5xl);
+$spacing-6xl: var(--spacing-6xl);
+$spacing-7xl: var(--spacing-7xl);
+$spacing-8xl: var(--spacing-8xl);
+$spacing-9xl: var(--spacing-9xl);
